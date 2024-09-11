@@ -1,6 +1,6 @@
-const { createApp, ref } = Vue;
+const { createApp, ref, computed } = Vue;
 
-const quotes = [
+const originalQuotes = [
     {
         quote: "The night is darkest just before the dawn. And I promise you, the dawn is coming.",
         author: "Harvey Dent, The Dark Knight",
@@ -29,13 +29,37 @@ const quotes = [
 
 const app = createApp({
     setup() {
+        //variables
         const showAuthor = ref(false);
+        const quotes = ref(originalQuotes);
+        const totalQuotes = computed(() => {
+            return quotes.value.length;
+        });
+        const newMessage = ref("");
 
+        //funciones
         const toggleAuthor = () => {
             showAuthor.value = !showAuthor.value;
         };
 
-        return { quotes, showAuthor, toggleAuthor };
+        const addQuote = () => {
+            console.log(newMessage.value);
+            quotes.value.unshift({
+                quote: newMessage.value,
+                author: "Carlos Obando",
+            });
+
+            newMessage.value = "";
+        };
+
+        return {
+            quotes,
+            newMessage,
+            showAuthor,
+            totalQuotes,
+            toggleAuthor,
+            addQuote,
+        };
     },
 });
 
