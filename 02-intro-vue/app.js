@@ -5,12 +5,12 @@ const app = createApp({
         const message = ref("I'm batman");
         const author = ref("Bruce Wayne");
 
-        setTimeout(() => {
-            message.value = "Soy Goku";
-            author.value = "Kakaroto";
-        }, 2000);
+        const changeName = () => {
+            message.value = "I'm Superman";
+            author.value = "Clark Kent";
+        };
 
-        return { message, author };
+        return { message, author, changeName };
     },
 });
 

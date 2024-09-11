@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Hola mundo en Vue</title>
 </head>
+
 <body>
 
   <div id="myApp">
@@ -13,9 +15,13 @@
     <h1>Reactividad:</h1>
     <p>{{message}}</p>
     <p>{{author}}</p>
+
+    <button v-on:click="changeName">Cambiar mensaje</button>
+    <!-- <button v-on:click="">Cambiar mensaje</button> -->
   </div>
-  
+
   <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
   <script src="app.js"></script>
 </body>
+
 </html>
