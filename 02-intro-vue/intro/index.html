@@ -16,8 +16,8 @@
     <p>{{message}}</p>
     <p>{{author}}</p>
 
-    <button v-on:click="changeName">Cambiar mensaje</button>
-    <!-- <button v-on:click="">Cambiar mensaje</button> -->
+    <!-- <button v-on:click="changeName">Cambiar mensaje</button> -->
+    <button @click="changeName">Cambiar mensaje</button>
   </div>
 
   <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
