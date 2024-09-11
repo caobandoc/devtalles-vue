@@ -1,4 +1,4 @@
-const { createApp } = Vue;
+const { createApp, ref } = Vue;
 
 const quotes = [
     {
@@ -29,7 +29,13 @@ const quotes = [
 
 const app = createApp({
     setup() {
-        return { quotes };
+        const showAuthor = ref(false);
+
+        const toggleAuthor = () => {
+            showAuthor.value = !showAuthor.value;
+        };
+
+        return { quotes, showAuthor, toggleAuthor };
     },
 });
 
