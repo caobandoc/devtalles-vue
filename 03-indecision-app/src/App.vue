@@ -1,21 +1,11 @@
 <template>
-  <section>
-    <h3>Counter: {{ count }}</h3>
-    <h3>Square: {{ squareCounter }}</h3>
+  <h1>Mi primera app</h1>
+  <hr>
 
-    <div>
-      <button @click="count++">+1</button>
-      <button @click="count--">-1</button>
-    </div>
-  </section>
+  <MyCounter :value="5"/>
+  <!-- <MyCounter v-bind:value="5"/> -->
 </template>
 
 <script lang="ts" setup>
-import { computed, ref } from 'vue';
-
-// variables
-const count = ref(2);
-const squareCounter = computed(() => count.value * count.value);
-//functions
-//logic
+import MyCounter from './components/MyCounter.vue';
 </script>
