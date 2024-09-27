@@ -5,8 +5,8 @@
     <h4>{{ text }}</h4>
 
     <div>
-      <button @click="count++">+1</button>
-      <button @click="count--">-1</button>
+      <button class="btn" @click="count++">+1</button>
+      <button class="btn" @click="count--">-1</button>
     </div>
   </section>
 </template>
@@ -24,3 +24,11 @@ const props = defineProps<Props>();
 const count = ref(props.value);
 const squareCounter = computed(() => count.value * count.value);
 </script>
+
+<style scoped>
+
+.btn{
+  @apply p-5 bg-blue-500 rounded hover:bg-blue-700 mr-2;
+}
+
+</style>
